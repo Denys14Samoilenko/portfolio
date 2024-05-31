@@ -2,17 +2,14 @@
 
 const DownloadBtn = () => {
 	const downloadFile = () => {
-		const pdfFilePath = 'CV.Denys Samoilenko.Full-Stack Developer.pdf';
-		const url = 'http://localhost:3000/' + pdfFilePath;
+		const pdfFilePath = '/CV.Denys Samoilenko.Full-Stack Developer.pdf';
+		const url = window.location.origin + pdfFilePath;
 
 		const link = document.createElement('a');
 		link.href = url;
-
 		link.download = 'CV.Denys Samoilenko.Full-Stack Developer.pdf';
-
 		document.body.appendChild(link);
 		link.click();
-
 		document.body.removeChild(link);
 	};
 
