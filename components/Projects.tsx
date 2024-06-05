@@ -4,6 +4,7 @@ import { Entry } from 'contentful';
 
 import Link from 'next/link';
 import Project from './Project';
+import Title from './Title';
 
 const Projects = async () => {
 	const projects = await client.getEntries<ProjectContent>({
@@ -15,7 +16,7 @@ const Projects = async () => {
 
 	return (
 		<section className=" text-3xl text-center py-10 md:py-[35px]">
-			<h2 className="mb-[40px]">My Projects</h2>
+			<Title msg="My Projects" />
 			<div className="flex flex-wrap -m-3">
 				{projectsList.map((project: any, index) => {
 					return (

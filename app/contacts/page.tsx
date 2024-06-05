@@ -2,6 +2,39 @@
 import { motion } from 'framer-motion';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
+import Title from '@/components/Title';
+import Link from 'next/link';
+import { SlSocialLinkedin } from 'react-icons/sl';
+import { FiGithub } from 'react-icons/fi';
+import { FaTelegramPlane, FaPhoneAlt, FaMailBulk } from 'react-icons/fa';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const successToast = (msg: string) =>
+	toast.success(msg, {
+		position: 'top-right',
+		autoClose: 4000,
+		hideProgressBar: false,
+		closeOnClick: true,
+		pauseOnHover: true,
+		draggable: true,
+		progress: undefined,
+		theme: 'dark',
+		transition: Bounce,
+	});
+
+const erroroToast = (msg: string) =>
+	toast.error(msg, {
+		position: 'top-right',
+		autoClose: 4000,
+		hideProgressBar: false,
+		closeOnClick: true,
+		pauseOnHover: true,
+		draggable: true,
+		progress: undefined,
+		theme: 'dark',
+		transition: Bounce,
+	});
 
 const Contacts = () => {
 	const {
@@ -21,26 +54,20 @@ const Contacts = () => {
 			);
 
 			if (response.status === 200) {
+				successToast('Your message sent, thank you!');
 				reset();
-				console.log('Email sent successfully');
-			} else {
-				console.error('Failed to send email');
 			}
 		} catch (error) {
-			console.error('Error sending email:', error);
+			erroroToast(
+				'An error has occurred, please try again later or use my contacts!'
+			);
 		}
 	};
 
 	return (
-		<main className="flex flex-col items-center p-4 overflow-hidden">
-			<div className="flex flex-col gap-8 pb-10 md:pb-[20px] w-1/2 md:w-1/3">
-				<motion.h1
-					initial={{ y: -300 }}
-					animate={{ y: 0 }}
-					className="text-center"
-				>
-					Contacts
-				</motion.h1>
+		<main className="flex flex-col items-center p-4 overflow-hidden gap-6">
+			<div className="flex flex-col text-center gap-8 pb-10 md:pb-[20px] w-1/2 md:w-1/3">
+				<Title msg="Contacts" />
 				<motion.form
 					initial={{ opacity: 0, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
@@ -105,6 +132,42 @@ const Contacts = () => {
 					</button>
 				</motion.form>
 			</div>
+			<motion.div
+				className="flex gap-6 items-center"
+				initial={{ opacity: 0, scale: 0.5 }}
+				animate={{ opacity: 1, scale: 1 }}
+				transition={{ duration: 0.5 }}
+			>
+				<Link
+					href="https://www.linkedin.com/in/denys-samoilenko-4a3664119/"
+					target="_blank"
+				>
+					<SlSocialLinkedin className="text-[#5C62EC] text-2xl hover:text-white duration-500" />
+				</Link>
+				<Link href="https://github.com/Denys14Samoilenko" target="_blank">
+					<FiGithub className="text-[#5C62EC] text-2xl hover:text-white duration-500" />
+				</Link>
+				<Link href="https://t.me/samoilenko14" target="_blank">
+					<FaTelegramPlane className="text-[#5C62EC] text-2xl hover:text-white duration-500" />
+				</Link>
+				<Link
+					href="tel:+380990798517"
+					target="_blank"
+					className="flex items-center gap-2 text-[#5C62EC] text-base hover:text-white duration-500"
+				>
+					<FaPhoneAlt />
+					<span>+38 (099) 079 85 17</span>
+				</Link>
+				<Link
+					href="mailto:denys.samoilenko.dev@gmail.com"
+					target="_blank"
+					className="flex items-center gap-2 text-[#5C62EC] text-base hover:text-white duration-500"
+				>
+					<FaMailBulk />
+					<span>denys.samoilenko.dev@gmail.com</span>
+				</Link>
+			</motion.div>
+			<ToastContainer />
 		</main>
 	);
 };
