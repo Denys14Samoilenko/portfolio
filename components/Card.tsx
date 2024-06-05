@@ -11,12 +11,10 @@ const Card = () => {
       p-8 rounded-xl max-w-[800px] hover:shadow-md hover:shadow-[#5C62EC] transition-shadow duration-500 overflow-hidden"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ delay: 0.2 }}
 			>
 				<motion.figure
 					initial={{ x: -100, opacity: 0 }}
 					animate={{ x: 0, opacity: 1 }}
-					transition={{ delay: 0.4 }}
 					className="w-full flex justify-center"
 				>
 					<Image
