@@ -66,7 +66,7 @@ const Contacts = () => {
 
 	return (
 		<main className="flex flex-col items-center p-4 overflow-hidden gap-6">
-			<div className="flex flex-col text-center gap-8 pb-10 md:pb-[20px] w-1/2 md:w-1/3">
+			<div className="flex flex-col text-center gap-8 pb-10 md:pb-[20px] w-full md:w-1/3">
 				<Title msg="Contacts" />
 				<motion.form
 					initial={{ opacity: 0, scale: 0.5 }}
@@ -133,7 +133,7 @@ const Contacts = () => {
 				</motion.form>
 			</div>
 			<motion.div
-				className="flex gap-6 items-center"
+				className="flex gap-6 flex-wrap items-center justify-center"
 				initial={{ opacity: 0, scale: 0.5 }}
 				animate={{ opacity: 1, scale: 1 }}
 				transition={{ duration: 0.5 }}
