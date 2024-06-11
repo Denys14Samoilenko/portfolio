@@ -2,12 +2,12 @@
 
 const DownloadBtn = () => {
 	const downloadFile = () => {
-		const pdfFilePath = '/CV.Denys Samoilenko.Full-Stack Developer.pdf';
+		const pdfFilePath = '/CV.Denys Samoilenko.Front End Developer.pdf';
 		const url = window.location.origin + pdfFilePath;
 
 		const link = document.createElement('a');
 		link.href = url;
-		link.download = 'CV.Denys Samoilenko.Full-Stack Developer.pdf';
+		link.download = 'CV.Denys Samoilenko.Front End Developer.pdf';
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
