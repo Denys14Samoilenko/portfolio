@@ -10,7 +10,7 @@ const Hero = () => {
 		<motion.section
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			className="flex flex-col gap-5 items-center text-center"
+			className="flex flex-col gap-5 items-center text-center pt-12"
 		>
 			<motion.h1
 				initial={{ x: -300 }}

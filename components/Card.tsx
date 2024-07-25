@@ -13,7 +13,7 @@ const Card = () => {
 				animate={{ opacity: 1 }}
 				transition={{ delay: 0.2 }}
 			>
-				<motion.figure
+				{/* <motion.figure
 					initial={{ x: -100, opacity: 0 }}
 					animate={{ x: 0, opacity: 1 }}
 					transition={{ delay: 0.4 }}
@@ -26,7 +26,7 @@ const Card = () => {
 						height={150}
 						alt="My Photo"
 					/>
-				</motion.figure>
+				</motion.figure> */}
 				<motion.div
 					className="flex flex-col gap-3 items-center"
 					initial={{ x: 100, opacity: 0 }}

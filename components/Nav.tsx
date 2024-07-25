@@ -1,8 +1,11 @@
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navLinks: string[] = ['about me', 'contacts'];
 
 const Nav = () => {
+	const pathName = usePathname();
+
 	return (
 		<nav>
 			<ul className="flex gap-3 flex-wrap">
@@ -12,7 +15,9 @@ const Nav = () => {
 					return (
 						<li key={link} className="group">
 							<Link
-								className={`capitalize hover:text-[#5C62EC] transition duration-500 relative`}
+								className={`capitalize hover:text-[#5C62EC] transition duration-500 relative ${
+									pathName === href ? 'text-[#5C62EC]' : ''
+								}`}
 								href={`${href}`}
 							>
 								{link}
