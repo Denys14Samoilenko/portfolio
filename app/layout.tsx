@@ -9,7 +9,7 @@ const sans = DM_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Denys Samoilenko portfolio',
-	description: 'Full-stack developer portfolio',
+	description: 'Front-end developer portfolio',
 };
 
 export default async function RootLayout({
