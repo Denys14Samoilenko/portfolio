@@ -13,32 +13,6 @@ React Hook Form: A library for managing and validating forms, ensuring a smooth 
 Installation
 To run this project locally, follow these steps:
 
-Clone the repository:
-
-bash
-Копировать код
-git clone https://github.com/your-username/your-repo-name.git
-Navigate to the project directory:
-
-bash
-Копировать код
-cd your-repo-name
-Install the dependencies:
-
-bash
-Копировать код
-npm install
-Create a .env.local file in the root directory and add your environment variables for Contentful and EmailJS.
-
-Run the development server:
-
-bash
-Копировать код
-npm run dev
-Open your browser and visit http://localhost:3000 to see the project in action.
-
-Deployment
-This project can be easily deployed using platforms like Vercel or Netlify. Before deploying, make sure to set up the environment variables on the hosting platform.
 
 Contact
 If you have any questions or feedback, feel free to reach out via the contact form on the portfolio or directly through email.
